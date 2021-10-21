@@ -1,0 +1,15 @@
+body {
+  background-color: #2d3e50;
+}
+
+.container h3 {
+  text-align: center;
+  color: #fff;
+}
+
+button {
+  padding: 45px;
+  border: 1px solid #2d3e50;
+  background-color: #34495e;
+}
+/*# sourceMappingURL=style.main.css.map */
