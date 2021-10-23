@@ -18,16 +18,6 @@ class MainGame extends React.Component {
         const square = current.sqrArr.slice()
         console.log(square)
 
-        // if (calculateWinner(square) || square(i)) {
-        //     return
-        // } else {
-        //     square[i] = this.state.xInNext ? 'X' : 'O'
-        //     this.setState({
-        //         history:history.concat([{square}]),
-        //         stepNumber:history.length,
-        //         xInNext:!this.state.xInNext
-        //     })
-        // }
     }
 
     render() {
