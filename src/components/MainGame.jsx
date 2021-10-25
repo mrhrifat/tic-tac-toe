@@ -2,29 +2,105 @@ import React from "react";
 import Board from "./sub-components/Board";
 import '../styles/style.main.css'
 
+
+
+// Main Game
 class MainGame extends React.Component {
 
     state = {
-        history: [{ sqrArr: Array(9).fill(null) }],
+        history: [{ sqrArray: Array(9).fill(null) }],
         stepNumber: 0,
-        xInNext: true
+        xIsNext: true
+    }
+
+    calculateWinner(sqrArray) {
+        const possible = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ]
+
+        for (let i = 0; i < possible.length; i++) {
+            let [a, b, c] = possible[i]
+            // console.log(i)
+            if (sqrArray[a] && sqrArray[a] === sqrArray[b] && sqrArray[a] === sqrArray[c]) {
+                return sqrArray[a]
+            }
+        }
+        return null
     }
 
     handleClick = i => {
-        const history2 = this.state.history.slice(0, this.state.stepNumber + 1)
-        console.log(history2)
-        const current = history2[history2.length - 1]
-        console.log(current)
-        const square = current.sqrArr.slice()
-        console.log(square)
+        // console.log(i)
+        // console.log(this.state.history[0])
 
+        const history = this.state.history.slice(0, this.state.stepNumber + 1)
+        const current = history[history.length - 1]
+        const sqrArray = current.sqrArray.slice()
+
+        if (this.calculateWinner(sqrArray) || sqrArray[i]) {
+            return
+        } else {
+            sqrArray[i] = this.state.xIsNext ? 'X' : 'O'
+        }
+
+        this.setState({
+            history: history.concat([{ sqrArray }]),
+            stepNumber: history.length,
+            xIsNext: !this.state.xIsNext
+        })
+
+        // console.log(history)
+        // console.log(current)
+        // console.log(sqrArray)
+    }
+
+    jumpTo = step => {
+        this.setState({
+            stepNumber: step,
+            xIsNext: step % 2 === 0
+        })
     }
 
     render() {
+        const history = this.state.history
+        const current = history[this.state.stepNumber]
+        const winner = this.calculateWinner(current.sqrArray)
+        // console.log(winner)
+
+        const moves = history.map((_, move) => {
+            const description = move ? 'Go to move # ' + move : 'Go to game start'
+            return (
+                <li key={move}>
+                    <button onClick={() => this.jumpTo(move)}>{description}</button>
+                </li>
+            )
+        })
+
+        let status = ''
+        if (winner) {
+            status = 'Winner is ' + winner
+        } else {
+            status = "Next player is " + (this.state.xIsNext ? 'X' : 'O')
+        }
+
         return (
-            <div className='container'>
+            <div className='container' >
                 <h3>Tic Tac Toe</h3>
-                <Board sqrArr={this.state.history[0]} onClick={this.handleClick} />
+                <div className="board">
+                    <Board sqrArray={current.sqrArray} onClick={this.handleClick} />
+                </div>
+                <div className="info">
+                    <div className="status">{status}</div>
+                    <ol>
+                        {moves}
+                    </ol>
+                </div>
             </div>
         )
     }
