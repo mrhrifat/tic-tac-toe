@@ -3,33 +3,34 @@ import Square from "./Square";
 
 
 
-const Board = props => {
+class Board extends React.Component {
 
-    const makeSquare = i =>
+    renderSquare = i =>
         <Square
-            sqrValue={props.sqrArr[i]}
-            sqrHandleClick={() => props.onClick(i)}
+            sqrValue={this.props.sqrArray[i]}
+            sqrHandleClick={() => this.props.onClick(i)}
         />
 
-
-    return (
-        <div className='board text-center'>
-            <div>
-                {makeSquare(0)}
-                {makeSquare(1)}
-                {makeSquare(2)}
+    render() {
+        return (
+            <div className='text-center'>
+                <div className='board-row'>
+                    {this.renderSquare(0)}
+                    {this.renderSquare(1)}
+                    {this.renderSquare(2)}
+                </div>
+                <div className='board-row'>
+                    {this.renderSquare(3)}
+                    {this.renderSquare(4)}
+                    {this.renderSquare(5)}
+                </div>
+                <div className='board-row'>
+                    {this.renderSquare(6)}
+                    {this.renderSquare(7)}
+                    {this.renderSquare(8)}
+                </div>
             </div>
-            <div>
-                {makeSquare(3)}
-                {makeSquare(4)}
-                {makeSquare(5)}
-            </div>
-            <div>
-                {makeSquare(6)}
-                {makeSquare(7)}
-                {makeSquare(8)}
-            </div>
-        </div>
-    )
+        )
+    }
 }
 export default Board
