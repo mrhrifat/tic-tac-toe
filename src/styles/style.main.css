@@ -7,8 +7,22 @@ body {
   color: #fff;
 }
 
-button {
-  padding: 45px;
+.board-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.board-btn {
+  width: 50px;
+  height: 50px;
+  padding: 50px;
   border: 1px solid #2d3e50;
   background-color: #34495e;
 }
