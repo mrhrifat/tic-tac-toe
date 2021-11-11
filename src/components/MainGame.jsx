@@ -1,6 +1,6 @@
 import React from "react";
 import Board from "./sub-components/Board";
-import '../styles/style.main.css'
+// import '../styles/style.main.css'
 
 
 
@@ -90,18 +90,40 @@ class MainGame extends React.Component {
         }
 
         return (
-            <div className='container' >
-                <h3>Tic Tac Toe</h3>
-                <div className="board">
-                    <Board sqrArray={current.sqrArray} onClick={this.handleClick} />
+            <div
+                className='container py-3'
+                style={{
+                    backgroundColor: '#2d3e50'
+                }}
+            >
+                <h3
+                    style={{
+                        textAlign: 'center',
+                        color: '#fff'
+                    }}
+                    className='py-2'
+                >Tic Tac Toe</h3>
+
+                <div className="row">
+                    <div className="col-md-6 board">
+                        <Board sqrArray={current.sqrArray} onClick={this.handleClick} />
+                    </div>
+                    <div className="col-md-6 info">
+
+                        <div
+                            className="text-light"
+                        >
+                            {status}
+                        </div>
+
+                        <ol>
+                            {moves}
+                        </ol>
+
+                    </div>
                 </div>
-                <div className="info">
-                    <div className="status">{status}</div>
-                    <ol>
-                        {moves}
-                    </ol>
-                </div>
-            </div>
+
+            </div >
         )
     }
 }
