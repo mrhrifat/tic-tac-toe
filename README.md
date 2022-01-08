@@ -8,3 +8,15 @@ This is a Tic Tac Toe game build with JavaScript & popular library ReactJS. I bu
 - Props
 - State
 Although it's a simple game, but by build it I have learned more new core things of ReactJS.
+
+## Features
+- History Board
+- Nice UI
+- User Friendly
+- Move Backwards
+- Move Forwards
+- Show Winner
+
+## Version
+> v1.0.0
+
