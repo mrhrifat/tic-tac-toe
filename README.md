@@ -44,7 +44,7 @@ npm start
 ```
 6. Enjoy
 
-**Note:** If you have any error while running this project, please create an Issue.
+**Note:** If you get any error while running this project, please create an Issue.
 
 ## How To Contribute
 I will be open to any contribution. If you have any idea, please let me know. I will be happy to help you.
