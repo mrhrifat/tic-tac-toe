@@ -43,6 +43,7 @@ Although it's a simple game, but by build it I have learned more new core things
 npm start
 ```
 6. Enjoy
+
 **Note:** If you have any error while running this project, please create an Issue.
 
 ## How To Contribute
