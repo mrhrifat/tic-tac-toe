@@ -35,12 +35,15 @@ Although it's a simple game, but by build it I have learned more new core things
 
 ## How To Use
 1. Download the [repository](https://github.com/mrhrifat/tic-tac-toe).
-2. Open with IDE
-3. Open Terminal & run with
+2. Extract directory.
+3. Open directory with IDE.
+4. Open Terminal.
+5. Run with
 ```
 npm start
 ```
-4. Enjoy
+6. Enjoy
+**Note:** If you have any error while running this project, please create an Issue.
 
 ## How To Contribute
 I will be open to any contribution. If you have any idea, please let me know. I will be happy to help you.
