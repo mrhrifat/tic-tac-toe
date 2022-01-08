@@ -16,7 +16,7 @@ Although it's a simple game, but by build it I have learned more new core things
     <img src="https://i.ibb.co/QpxS38k/Tic-Tac-Toe.png" alt="Tic Tac Toe" border="0">
 </details>
 
-**Note:** This project isn't available on server. To use in local follow [this](#-how-to-use-)
+**Note:** This project isn't available on server. To use in local follow [this](#how-to-use)
 
 ## Features
 - History Board
